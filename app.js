@@ -85,20 +85,7 @@ function preload(url) {
   img.src = url;
 }
 
-function timeLikeString() {
-  // Cosmetic timestamp similar to X: "1:56 AM · Sep 1, 2025 · 73.1K Views"
-  const now = new Date();
-  const hour = now.getHours();
-  const minute = now.getMinutes().toString().padStart(2, '0');
-  const ampm = hour >= 12 ? 'PM' : 'AM';
-  const h12 = hour % 12 || 12;
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const dateStr = `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
-  // Generate a lightweight views count
-  const viewsBase = Math.floor(Math.random() * 90_000) + 10_000; // 10K - 100K
-  const views = viewsBase >= 1000 ? `${(viewsBase/1000).toFixed(1)}K` : `${viewsBase}`;
-  return `${h12}:${minute} ${ampm} · ${dateStr} · ${views} Views`;
-}
+function timeLikeString() { return ''; }
 
 function renderCurrent() {
   const current = STATE.quotes[STATE.order[STATE.index]];
@@ -118,6 +105,7 @@ function renderCurrent() {
   el.name.textContent = 'Unknown';
   el.handle.textContent = '@????????';
   el.meta.textContent = timeLikeString();
+  el.meta.style.display = 'none';
   if (el.verified) el.verified.hidden = true;
 
   // Quote text
@@ -156,6 +144,10 @@ function revealAndScore(guess) {
     : `Oops — it was ${actual?.name || 'Unknown'}.`;
   el.feedbackText.textContent = feedbackMsg;
   el.feedback.hidden = false;
+  el.feedback.classList.remove('feedback--correct', 'feedback--wrong', 'anim');
+  // toggle classes and retrigger animation
+  void el.feedback.offsetWidth;
+  el.feedback.classList.add(correct ? 'feedback--correct' : 'feedback--wrong', 'anim');
   setProgress();
 }
 
@@ -250,7 +242,8 @@ async function loadQuotes() {
 document.addEventListener('DOMContentLoaded', () => {
   el.avatar.src = unknownAvatarDataUrl();
   el.avatar.alt = 'Hidden profile';
-  el.meta.textContent = timeLikeString();
+  el.meta.textContent = '';
+  el.meta.style.display = 'none';
   setProgress();
   loadQuotes();
 });

@@ -124,3 +124,27 @@ body {
   .post__avatar img { width: 40px; height: 40px; }
   .post__content { font-size: 18px; }
 }
+
+/* Feedback banner above post */
+.feedback { 
+  display: grid; place-items: center; gap: 8px; margin: 0 auto 8px; text-align: center;
+}
+.feedback #feedback-text { font-size: 28px; font-weight: 800; letter-spacing: .2px; }
+.feedback.feedback--correct #feedback-text { color: #22c55e; text-shadow: 0 0 24px rgba(34,197,94,0.25); }
+.feedback.feedback--wrong #feedback-text { color: #ef4444; text-shadow: 0 0 24px rgba(239,68,68,0.25); }
+.feedback.anim #feedback-text { animation: pop 520ms cubic-bezier(.2,.7,.2,1); }
+@keyframes pop {
+  0% { transform: translateY(-8px) scale(.92); opacity: 0; }
+  50% { transform: translateY(0) scale(1.04); opacity: 1; }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Bottom-right credit badge */
+.credit {
+  position: fixed; right: 16px; bottom: 16px; z-index: 20; display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 12px; border: 1px solid #2f3336; border-radius: 999px; background: rgba(15,20,25,0.8);
+  backdrop-filter: saturate(140%) blur(8px); color: var(--text); text-decoration: none; font-weight: 650; font-size: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.credit img { width: 28px; height: 28px; border-radius: 999px; border: 1px solid #2f3336; object-fit: cover; display: block; }
+.credit:hover { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(29,155,240,0.15), 0 6px 18px rgba(0,0,0,0.5); }
