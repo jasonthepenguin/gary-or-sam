@@ -185,11 +185,9 @@ function showResults() {
 
   // Simple remark based on performance
   const pct = STATE.quotes.length ? (STATE.score / STATE.quotes.length) : 0;
-  let remark = 'Nice try!';
-  if (pct === 1) remark = 'Perfect memory. Touch grass?';
-  else if (pct >= 0.8) remark = 'Elite vibes. You know your posters.';
-  else if (pct >= 0.5) remark = 'Not bad! You’ve got the gist.';
-  else remark = 'Tough crowd. Try again!';
+  let remark = 'You have hit the wall :(';
+  if (pct === 1) remark = 'Feeling the AGI';
+  else if (pct >= 0.5) remark = 'You almost felt the AGI';
   el.finalRemark.textContent = remark;
 }
 
