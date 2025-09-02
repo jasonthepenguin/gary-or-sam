@@ -1,5 +1,5 @@
 :root {
-  --bg: #05080c;
+  --bg: #000204;
   --bg-elev: #0b1116;
   --text: #e6edf3;
   --muted: #9aa4af;
@@ -23,9 +23,9 @@ body {
   font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, Noto Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   color: var(--text);
   background:
-    radial-gradient(1100px 700px at 10% -10%, rgba(29,155,240,0.06), transparent 60%),
-    radial-gradient(900px 600px at 110% 10%, rgba(34,197,94,0.06), transparent 60%),
-    var(--bg);
+    radial-gradient(1100px 700px at 10% -10%, rgba(29,155,240,0.05), transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, rgba(34,197,94,0.05), transparent 60%),
+    linear-gradient(180deg, #00060a 0%, #000204 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -134,18 +134,18 @@ body {
   color: #ffffff;
   font-weight: 800;
   font-size: 18px;
-  text-shadow: 0 0 4px color-mix(in srgb, var(--c), #ffffff 30%);
+  text-shadow: 0 0 3px color-mix(in srgb, var(--c), #ffffff 18%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 50%) inset,
-              0 6px 16px color-mix(in srgb, var(--c), #000 60%),
-              0 0 14px color-mix(in srgb, var(--c), #ffffff 12%);
+              0 4px 12px color-mix(in srgb, var(--c), #000 60%),
+              0 0 10px color-mix(in srgb, var(--c), #ffffff 12%);
 }
 .btn--gary:hover {
   filter: brightness(1.05);
   background:
     radial-gradient(120% 140% at 50% -30%, color-mix(in srgb, var(--c), #ffffff 28%) 0%, var(--c) 44%, color-mix(in srgb, var(--c), #000 10%) 100%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 45%) inset,
-              0 8px 20px color-mix(in srgb, var(--c), #000 55%),
-              0 0 16px color-mix(in srgb, var(--c), #ffffff 18%);
+              0 6px 16px color-mix(in srgb, var(--c), #000 55%),
+              0 0 12px color-mix(in srgb, var(--c), #ffffff 18%);
 }
 .btn--gary:active { filter: brightness(0.98); }
 .btn--sam {
@@ -156,18 +156,18 @@ body {
   color: #ffffff;
   font-weight: 800;
   font-size: 18px;
-  text-shadow: 0 0 4px color-mix(in srgb, var(--c), #ffffff 30%);
+  text-shadow: 0 0 3px color-mix(in srgb, var(--c), #ffffff 18%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 50%) inset,
-              0 6px 16px color-mix(in srgb, var(--c), #000 60%),
-              0 0 14px color-mix(in srgb, var(--c), #ffffff 12%);
+              0 4px 12px color-mix(in srgb, var(--c), #000 60%),
+              0 0 10px color-mix(in srgb, var(--c), #ffffff 12%);
 }
 .btn--sam:hover {
   filter: brightness(1.05);
   background:
     radial-gradient(120% 140% at 50% -30%, color-mix(in srgb, var(--c), #ffffff 26%) 0%, var(--c) 44%, color-mix(in srgb, var(--c), #000 10%) 100%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 45%) inset,
-              0 8px 20px color-mix(in srgb, var(--c), #000 55%),
-              0 0 16px color-mix(in srgb, var(--c), #ffffff 18%);
+              0 6px 16px color-mix(in srgb, var(--c), #000 55%),
+              0 0 12px color-mix(in srgb, var(--c), #ffffff 18%);
 }
 .btn--sam:active { filter: brightness(0.98); }
 
@@ -177,10 +177,10 @@ body {
   background:
     radial-gradient(120% 160% at 50% -30%, rgba(29,155,240,0.40), rgba(29,155,240,0.22) 40%, rgba(29,155,240,0.10) 100%), #0b1623;
   color: #eaf6ff;
-  text-shadow: 0 0 10px rgba(29,155,240,0.45);
+  text-shadow: 0 0 6px rgba(29,155,240,0.30);
   box-shadow: 0 0 0 1px rgba(29,155,240,0.35) inset,
-              0 10px 28px rgba(29,155,240,0.20),
-              0 0 22px rgba(29,155,240,0.26);
+              0 8px 22px rgba(29,155,240,0.14),
+              0 0 16px rgba(29,155,240,0.18);
 }
 .btn--next:hover, .btn--primary:hover { filter: brightness(1.05); }
 .btn--next:active, .btn--primary:active { filter: brightness(0.98); }
