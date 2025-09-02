@@ -52,7 +52,7 @@ body {
 .scoreboard { color: var(--muted); font-size: 14px; position: absolute; right: 16px; }
 .scoreboard .dot { margin: 0 8px; opacity: 0.6; }
 
-.game { max-width: 720px; margin: 0 auto; padding: 24px 16px 40px; min-height: calc(100vh - 72px); display: grid; place-content: start center; gap: 16px; padding-top: clamp(12px, 8vh, 72px); }
+.game { max-width: 720px; margin: 0 auto; padding: 24px 16px 40px; min-height: calc(100vh - 72px); display: grid; place-content: center; gap: 16px; transform: translateY(-2vh); }
 
 .post {
   background: var(--card);
