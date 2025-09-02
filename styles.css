@@ -57,9 +57,10 @@ body {
   background: radial-gradient(100% 100% at 0% 0%, #0b86d8 0%, #1d9bf0 40%, #6ad9ff 100%);
   box-shadow: 0 0 24px rgba(29,155,240,0.35);
 }
-.brand__title { font-weight: 800; letter-spacing: 0.3px; font-size: 18px; }
+.brand__title { font-weight: 800; letter-spacing: 0.3px; font-size: 18px; text-shadow: 0 0 6px rgba(29,155,240,0.35), 0 0 12px rgba(29,155,240,0.22), 0 0 20px rgba(29,155,240,0.14); }
+.brand:hover .brand__title { text-shadow: 0 0 6px rgba(29,155,240,0.45), 0 0 14px rgba(29,155,240,0.30), 0 0 24px rgba(29,155,240,0.18); }
 
-.scoreboard { color: var(--muted); font-size: 14px; position: absolute; right: 16px; }
+.scoreboard { color: #eaf6ff; font-size: 14px; position: absolute; right: 16px; }
 .scoreboard .dot { margin: 0 8px; opacity: 0.6; }
 
 .game { max-width: 720px; margin: 0 auto; padding: 24px 16px 40px; min-height: calc(100vh - 72px); display: grid; place-content: center; gap: 16px; transform: translateY(-4vh); }
@@ -115,18 +116,20 @@ body {
   background:
     radial-gradient(120% 140% at 50% -20%, color-mix(in srgb, var(--c), #ffffff 24%) 0%, var(--c) 40%, color-mix(in srgb, var(--c), #000 15%) 100%);
   color: #ffffff;
-  text-shadow: 0 0 8px color-mix(in srgb, var(--c), #ffffff 30%);
+  font-weight: 800;
+  font-size: 18px;
+  text-shadow: 0 0 4px color-mix(in srgb, var(--c), #ffffff 30%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 50%) inset,
-              0 8px 22px color-mix(in srgb, var(--c), #000 60%),
-              0 0 22px color-mix(in srgb, var(--c), #ffffff 12%);
+              0 6px 16px color-mix(in srgb, var(--c), #000 60%),
+              0 0 14px color-mix(in srgb, var(--c), #ffffff 12%);
 }
 .btn--gary:hover {
   filter: brightness(1.05);
   background:
     radial-gradient(120% 140% at 50% -30%, color-mix(in srgb, var(--c), #ffffff 28%) 0%, var(--c) 44%, color-mix(in srgb, var(--c), #000 10%) 100%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 45%) inset,
-              0 10px 28px color-mix(in srgb, var(--c), #000 55%),
-              0 0 28px color-mix(in srgb, var(--c), #ffffff 18%);
+              0 8px 20px color-mix(in srgb, var(--c), #000 55%),
+              0 0 16px color-mix(in srgb, var(--c), #ffffff 18%);
 }
 .btn--gary:active { filter: brightness(0.98); }
 .btn--sam {
@@ -135,18 +138,20 @@ body {
   background:
     radial-gradient(120% 140% at 50% -20%, color-mix(in srgb, var(--c), #ffffff 22%) 0%, var(--c) 40%, color-mix(in srgb, var(--c), #000 15%) 100%);
   color: #ffffff;
-  text-shadow: 0 0 8px color-mix(in srgb, var(--c), #ffffff 30%);
+  font-weight: 800;
+  font-size: 18px;
+  text-shadow: 0 0 4px color-mix(in srgb, var(--c), #ffffff 30%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 50%) inset,
-              0 8px 22px color-mix(in srgb, var(--c), #000 60%),
-              0 0 22px color-mix(in srgb, var(--c), #ffffff 12%);
+              0 6px 16px color-mix(in srgb, var(--c), #000 60%),
+              0 0 14px color-mix(in srgb, var(--c), #ffffff 12%);
 }
 .btn--sam:hover {
   filter: brightness(1.05);
   background:
     radial-gradient(120% 140% at 50% -30%, color-mix(in srgb, var(--c), #ffffff 26%) 0%, var(--c) 44%, color-mix(in srgb, var(--c), #000 10%) 100%);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--c), #000 45%) inset,
-              0 10px 28px color-mix(in srgb, var(--c), #000 55%),
-              0 0 28px color-mix(in srgb, var(--c), #ffffff 18%);
+              0 8px 20px color-mix(in srgb, var(--c), #000 55%),
+              0 0 16px color-mix(in srgb, var(--c), #ffffff 18%);
 }
 .btn--sam:active { filter: brightness(0.98); }
 
@@ -188,6 +193,10 @@ body {
   .credit { padding: 6px 12px; gap: 10px; }
   .credit img { width: 40px; height: 40px; padding: 2px; }
   .brand__title { font-size: 17px; }
+}
+
+@media (min-width: 521px) {
+  .vote { margin-top: 12px; }
 }
 
 /* Feedback banner above post */
