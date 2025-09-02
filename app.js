@@ -152,6 +152,12 @@ function revealAndScore(guess) {
   // toggle classes and retrigger animation
   void el.feedback.offsetWidth;
   el.feedback.classList.add(correct ? 'feedback--correct' : 'feedback--wrong', 'anim');
+  // Show link to the original post if available
+  if (current.url) {
+    el.meta.innerHTML = `<a href="${current.url}" target="_blank" rel="noopener noreferrer">View post on X</a>`;
+    el.meta.style.display = '';
+  }
+
   if (el.nextWrap) el.nextWrap.hidden = false;
   setProgress();
 }
@@ -232,6 +238,7 @@ async function loadQuotes() {
     STATE.quotes = data.map(q => ({
       text: String(q.text || '').trim(),
       author: String(q.author || '').toLowerCase(),
+      url: String(q.url || '').trim(),
     })).filter(q => q.text && (q.author === 'sam' || q.author === 'gary'));
 
     if (STATE.quotes.length === 0) throw new Error('No valid quotes.');
