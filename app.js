@@ -144,8 +144,8 @@ function revealAndScore(guess) {
   el.post.classList.toggle('wrong', !correct);
 
   const feedbackMsg = correct
-    ? 'Correct! :)'
-    : `Oops — it was ${actual?.name || 'Unknown'}. :(`;
+    ? 'Correct :)'
+    : `Oops it was ${actual?.name || 'Unknown'} :(`;
   el.feedbackText.textContent = feedbackMsg;
   el.feedback.hidden = false;
   el.feedback.classList.remove('feedback--correct', 'feedback--wrong', 'anim');

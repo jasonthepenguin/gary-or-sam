@@ -97,6 +97,22 @@ body {
 
 .post__content { font-size: 20px; line-height: 1.5; padding: 8px 0 12px; white-space: pre-wrap; }
 .post__meta { border-top: 1px solid #16181c; padding-top: 12px; }
+.post__meta a {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 10px; border-radius: 999px; text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--accent), #ffffff 12%);
+  background:
+    radial-gradient(120% 160% at 50% -30%, rgba(29,155,240,0.32), rgba(29,155,240,0.18) 40%, rgba(29,155,240,0.08) 100%), #0b1623;
+  color: #eaf6ff; font-weight: 700; font-size: 13px;
+  text-shadow: 0 0 8px rgba(29,155,240,0.28);
+  box-shadow: 0 0 0 1px rgba(29,155,240,0.28) inset,
+              0 6px 18px rgba(29,155,240,0.14),
+              0 0 14px rgba(29,155,240,0.18);
+  transition: filter 120ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+.post__meta a::after { content: '↗'; opacity: 0.85; font-size: 12px; }
+.post__meta a:hover { filter: brightness(1.06); border-color: #3b82f6; }
+.post__meta a:focus-visible { outline: none; box-shadow: 0 0 0 3px #16202a, 0 0 0 5px var(--accent); }
 
 .vote { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 720px; width: 100%; margin: 0 auto; padding: 0 16px; }
 .nav-next { display: grid; place-items: center; margin: 12px auto 0; }
@@ -187,7 +203,7 @@ body {
   .post__content { font-size: 18px; }
   .app__header { flex-direction: column; gap: 6px; padding: 12px; }
   .scoreboard { position: static; right: auto; transform: none; font-size: 12px; }
-  .game { transform: none; padding: 16px 12px 32px; }
+  .game { transform: none; padding: 16px 12px 112px; }
   .vote { grid-template-columns: 1fr; }
   .vote .btn { width: 100%; }
   .credit { padding: 6px 12px; gap: 10px; }
