@@ -34,6 +34,7 @@ const el = {
   guessSam: document.getElementById('guess-sam'),
   feedback: document.getElementById('feedback'),
   feedbackText: document.getElementById('feedback-text'),
+  nextWrap: document.getElementById('nav-next'),
   next: document.getElementById('next'),
   results: document.getElementById('results'),
   finalScore: document.getElementById('final-score'),
@@ -95,6 +96,9 @@ function renderCurrent() {
   STATE.locked = false;
   el.post.classList.remove('correct', 'wrong', 'revealed');
   el.feedback.hidden = true;
+  el.feedback.classList.remove('feedback--correct', 'feedback--wrong', 'anim');
+  el.feedbackText.textContent = '';
+  if (el.nextWrap) el.nextWrap.hidden = true;
 
   // Unknown avatar
   el.avatar.src = unknownAvatarDataUrl();
@@ -148,11 +152,16 @@ function revealAndScore(guess) {
   // toggle classes and retrigger animation
   void el.feedback.offsetWidth;
   el.feedback.classList.add(correct ? 'feedback--correct' : 'feedback--wrong', 'anim');
+  if (el.nextWrap) el.nextWrap.hidden = false;
   setProgress();
 }
 
 function nextRound() {
   STATE.index += 1;
+  if (el.nextWrap) el.nextWrap.hidden = true;
+  el.feedback.hidden = true;
+  el.feedback.classList.remove('feedback--correct', 'feedback--wrong', 'anim');
+  el.feedbackText.textContent = '';
   if (STATE.index >= STATE.quotes.length) {
     showResults();
   } else {
@@ -164,6 +173,7 @@ function showResults() {
   el.post.style.display = 'none';
   el.feedback.hidden = true;
   if (el.vote) el.vote.style.display = 'none';
+  if (el.nextWrap) el.nextWrap.hidden = true;
   el.results.hidden = false;
   el.finalScore.textContent = `${STATE.score}/${STATE.quotes.length}`;
 
@@ -184,6 +194,7 @@ function resetGame() {
   el.post.style.display = '';
   el.results.hidden = true;
   if (el.vote) el.vote.style.display = '';
+  if (el.nextWrap) el.nextWrap.hidden = true;
 
   STATE.order = shuffle([...STATE.quotes.keys()]);
   renderCurrent();

@@ -88,6 +88,7 @@ body {
 .post__meta { border-top: 1px solid #16181c; padding-top: 12px; }
 
 .vote { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 720px; width: 100%; margin: 0 auto; padding: 0 16px; }
+.nav-next { display: grid; place-items: center; margin: 12px auto 0; }
 
 .btn {
   appearance: none; border: 1px solid #2f3336; background: #0f1419; color: var(--text);
@@ -126,9 +127,7 @@ body {
 }
 
 /* Feedback banner above post */
-.feedback { 
-  display: grid; place-items: center; gap: 8px; margin: 0 auto 8px; text-align: center;
-}
+.feedback { display: grid; place-items: center; gap: 8px; margin: 0 auto 8px; text-align: center; }
 .feedback #feedback-text { font-size: 28px; font-weight: 800; letter-spacing: .2px; }
 .feedback.feedback--correct #feedback-text { color: #22c55e; text-shadow: 0 0 24px rgba(34,197,94,0.25); }
 .feedback.feedback--wrong #feedback-text { color: #ef4444; text-shadow: 0 0 24px rgba(239,68,68,0.25); }
