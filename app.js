@@ -214,7 +214,7 @@ window.addEventListener('keydown', (e) => {
   } else if (e.key === 'ArrowRight') {
     e.preventDefault();
     revealAndScore('sam');
-  } else if ((e.key === 'Enter' || e.key === ' ') && !el.feedback.hidden) {
+  } else if ((e.key === 'Enter' || e.key === ' ') && el.nextWrap && !el.nextWrap.hidden) {
     e.preventDefault();
     nextRound();
   }
