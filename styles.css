@@ -204,6 +204,21 @@ body {
   .app__header { flex-direction: column; gap: 6px; padding: 12px; }
   .scoreboard { position: static; right: auto; transform: none; font-size: 14px; }
   .game { transform: none; padding: 16px 12px 112px; }
+  /* Reorder sections on mobile to show Next above Vote */
+  .game {
+    display: grid;
+    grid-template-areas:
+      "feedback"
+      "post"
+      "nav"
+      "vote"
+      "results";
+  }
+  .feedback { grid-area: feedback; }
+  .post { grid-area: post; }
+  .nav-next { grid-area: nav; }
+  .vote { grid-area: vote; }
+  .results { grid-area: results; }
   .vote { grid-template-columns: 1fr; }
   .vote .btn { width: 100%; }
   .credit { padding: 2px 8px; gap: 6px; font-size: 11px; }
