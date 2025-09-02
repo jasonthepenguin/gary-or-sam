@@ -196,6 +196,17 @@ body {
 .results__title { margin: 0 0 6px; }
 .results__score { font-size: 48px; font-weight: 800; margin: 4px 0 8px; }
 .results__remark { color: var(--muted); margin-bottom: 12px; }
+.results__detail { color: var(--muted); margin-bottom: 16px; font-size: 14px; }
+
+.results__profiles { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.results__profiles .profile {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text);
+  padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 13px;
+  border: 1px solid color-mix(in srgb, var(--accent), #ffffff 12%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0) 60%), #0b1623;
+}
+.results__profiles .profile img { width: 28px; height: 28px; border-radius: 999px; object-fit: cover; display: block; border: 1px solid #2f3336; }
+.results__profiles .profile:hover { filter: brightness(1.06); border-color: #3b82f6; }
 
 @media (max-width: 520px) {
   .post { grid-template-columns: 48px 1fr; border-radius: 12px; }

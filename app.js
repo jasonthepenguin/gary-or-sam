@@ -39,6 +39,7 @@ const el = {
   results: document.getElementById('results'),
   finalScore: document.getElementById('final-score'),
   finalRemark: document.getElementById('final-remark'),
+  finalDetail: document.getElementById('final-detail'),
   playAgain: document.getElementById('play-again'),
   progress: document.getElementById('progress'),
   score: document.getElementById('score'),
@@ -189,6 +190,12 @@ function showResults() {
   if (pct === 1) remark = 'Feeling the AGI';
   else if (pct >= 0.5) remark = 'You almost felt the AGI';
   el.finalRemark.textContent = remark;
+
+  // Detail line about correct guesses
+  const detail = pct < 0.5
+    ? `You only correctly guessed ${STATE.score} out of ${STATE.quotes.length}.`
+    : `You correctly guessed ${STATE.score} out of ${STATE.quotes.length}.`;
+  if (el.finalDetail) el.finalDetail.textContent = detail;
 }
 
 function resetGame() {
