@@ -440,6 +440,7 @@ body {
   .game {
     display: grid;
     grid-template-areas:
+      "question"
       "feedback"
       "post"
       "nav"
@@ -447,6 +448,8 @@ body {
       "vote"
       "results";
   }
+  .question { grid-area: question; }
+  .question__text { font-size: 22px; }
   .feedback { grid-area: feedback; }
   .post { grid-area: post; }
   .nav-next { grid-area: nav; }
@@ -465,6 +468,20 @@ body {
 
 @media (min-width: 521px) {
   .vote { margin-top: 12px; }
+}
+
+/* White neon question heading */
+.question { text-align: center; margin: -8px 0 8px; }
+.question__text {
+  font-weight: 900;
+  letter-spacing: .3px;
+  color: #ffffff;
+  font-size: 26px;
+  text-shadow:
+    0 0 2px rgba(255,255,255,0.9),
+    0 0 6px rgba(255,255,255,0.8),
+    0 0 14px rgba(255,255,255,0.5),
+    0 0 22px rgba(255,255,255,0.35);
 }
 
 /* Feedback banner above post */
