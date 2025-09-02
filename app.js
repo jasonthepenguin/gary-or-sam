@@ -37,6 +37,7 @@ const el = {
   nextWrap: document.getElementById('nav-next'),
   next: document.getElementById('next'),
   results: document.getElementById('results'),
+  resultsProfiles: document.getElementById('results-profiles'),
   finalScore: document.getElementById('final-score'),
   finalRemark: document.getElementById('final-remark'),
   finalDetail: document.getElementById('final-detail'),
@@ -182,19 +183,42 @@ function showResults() {
   if (el.vote) el.vote.style.display = 'none';
   if (el.nextWrap) el.nextWrap.hidden = true;
   el.results.hidden = false;
+  if (el.resultsProfiles) el.resultsProfiles.hidden = false;
   el.finalScore.textContent = `${STATE.score}/${STATE.quotes.length}`;
 
-  // Simple remark based on performance
+  // Enhanced remarks with emojis and performance tiers
   const pct = STATE.quotes.length ? (STATE.score / STATE.quotes.length) : 0;
-  let remark = 'You have hit the wall :(';
-  if (pct === 1) remark = 'Feeling the AGI';
-  else if (pct >= 0.5) remark = 'You almost felt the AGI';
+  let remark = '';
+  let remarkClass = '';
+  
+  if (pct === 1) {
+    remark = 'Feeling the AGI 🌀';
+    remarkClass = 'perfect';
+  } else if (pct >= 0.8) {
+    remark = 'You almost felt the AGI';
+    remarkClass = 'excellent';
+  } else if (pct >= 0.6) {
+    remark = 'Hit the wall :(';
+    remarkClass = 'good';
+  } else if (pct >= 0.4) {
+    remark = 'Bro?';
+    remarkClass = 'okay';
+  } else {
+    remark = 'You have hit the wall bro';
+    remarkClass = 'poor';
+  }
+  
   el.finalRemark.textContent = remark;
+  el.finalRemark.className = 'results__remark results__remark--' + remarkClass;
 
-  // Detail line about correct guesses
-  const detail = pct < 0.5
-    ? `You only correctly guessed ${STATE.score} out of ${STATE.quotes.length}.`
-    : `You correctly guessed ${STATE.score} out of ${STATE.quotes.length}.`;
+  // Enhanced detail messages
+  const detail = pct === 1
+    ? `Incredible! You correctly identified all ${STATE.quotes.length} quotes!`
+    : pct >= 0.8
+    ? `Great work! You correctly guessed ${STATE.score} out of ${STATE.quotes.length}.`
+    : pct >= 0.5
+    ? `You correctly guessed ${STATE.score} out of ${STATE.quotes.length}.`
+    : `You correctly guessed ${STATE.score} out of ${STATE.quotes.length}. Room for improvement!`;
   if (el.finalDetail) el.finalDetail.textContent = detail;
 }
 
@@ -204,6 +228,7 @@ function resetGame() {
   STATE.locked = false;
   el.post.style.display = '';
   el.results.hidden = true;
+  if (el.resultsProfiles) el.resultsProfiles.hidden = true;
   if (el.vote) el.vote.style.display = '';
   if (el.nextWrap) el.nextWrap.hidden = true;
 
