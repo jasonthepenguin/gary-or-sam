@@ -60,7 +60,7 @@ body {
 .brand__title { font-weight: 800; letter-spacing: 0.3px; font-size: 18px; text-shadow: 0 0 6px rgba(29,155,240,0.35), 0 0 12px rgba(29,155,240,0.22), 0 0 20px rgba(29,155,240,0.14); }
 .brand:hover .brand__title { text-shadow: 0 0 6px rgba(29,155,240,0.45), 0 0 14px rgba(29,155,240,0.30), 0 0 24px rgba(29,155,240,0.18); }
 
-.scoreboard { color: #eaf6ff; font-size: 14px; position: absolute; right: 16px; }
+.scoreboard { color: #eaf6ff; font-size: 16px; font-weight: 800; position: absolute; right: 16px; }
 .scoreboard .dot { margin: 0 8px; opacity: 0.6; }
 
 .game { max-width: 720px; margin: 0 auto; padding: 24px 16px 40px; min-height: calc(100vh - 72px); display: grid; place-content: center; gap: 16px; transform: translateY(-4vh); }
@@ -202,12 +202,12 @@ body {
   .post__avatar img { width: 40px; height: 40px; }
   .post__content { font-size: 18px; }
   .app__header { flex-direction: column; gap: 6px; padding: 12px; }
-  .scoreboard { position: static; right: auto; transform: none; font-size: 12px; }
+  .scoreboard { position: static; right: auto; transform: none; font-size: 14px; }
   .game { transform: none; padding: 16px 12px 112px; }
   .vote { grid-template-columns: 1fr; }
   .vote .btn { width: 100%; }
-  .credit { padding: 6px 12px; gap: 10px; }
-  .credit img { width: 40px; height: 40px; padding: 2px; }
+  .credit { padding: 2px 8px; gap: 6px; font-size: 11px; }
+  .credit img { width: 30px; height: 30px; padding: 1px; }
   .brand__title { font-size: 17px; }
 }
 
